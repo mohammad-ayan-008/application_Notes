@@ -1,5 +1,6 @@
 package com.example.quicknotes.Repository
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.room.Insert
 import com.example.quicknotes.Dao.NotesDAo
@@ -13,9 +14,8 @@ class NotesRepo @Inject constructor(private val notesDAO: NotesDAo) {
         notesDAO.save(note)
     }
 
-    suspend fun findAll(): MutableLiveData<List<Note>> {
-        var data = MutableLiveData<List<Note>>()
-        data.postValue(notesDAO.findAll())
+    suspend fun findAll(): LiveData<List<Note>> {
+        var data = findAll()
         return data
     }
 

@@ -16,15 +16,10 @@ data class Note(
     @ColumnInfo(name = "Date")         var date:String,
     @ColumnInfo(name = "Day")          var day:String,
     @ColumnInfo(name = "Month")        var month:String,
-    @ColumnInfo(name = "priorities")   @get:Bindable var priority:String,
-    @ColumnInfo(name = "status")       var stauts:Boolean
+    @ColumnInfo(name = "priorities")   @Bindable var priority:String,
+    @ColumnInfo(name = "status")       var stauts:Boolean,
+    @ColumnInfo(name = "year")         var year:String
 
 ):BaseObservable(){
-    var PROPRITY: String
-        @Bindable get()=priority
-        set(value){
-            priority = value
-            notifyPropertyChanged(BR.priority)
-        }
 
 }

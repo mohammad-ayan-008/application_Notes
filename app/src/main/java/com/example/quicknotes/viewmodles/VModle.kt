@@ -13,15 +13,14 @@ import javax.inject.Inject
 @HiltViewModel
 class VModle @Inject constructor(private val notesDAo: NotesDAo):ViewModel() {
 
-    private var mutableLiveData:MutableLiveData<List<Note>> = MutableLiveData<List<Note>>()
+    private lateinit var LiveData:LiveData<List<Note>>
 
     public val allnotes:LiveData<List<Note>>
-        get() = mutableLiveData
+        get() = LiveData
 
     init {
         viewModelScope.launch {
-            val findAll = notesDAo.findAll()
-            mutableLiveData.postValue(findAll)
+            LiveData=notesDAo.findAll()
         }
     }
 
@@ -30,4 +29,14 @@ class VModle @Inject constructor(private val notesDAo: NotesDAo):ViewModel() {
            notesDAo.save(note)
        }
    }
+    fun delete(note: Note){
+        viewModelScope.launch {
+            notesDAo.delete(note)
+        }
+    }
+    fun update(note: Note){
+        viewModelScope.launch {
+            notesDAo.update(note)
+        }
+    }
 }

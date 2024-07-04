@@ -8,12 +8,14 @@ object BindView {
     @JvmStatic
     @BindingAdapter("cardBackgroundColor")
     fun setCardBackgroundColor(view: CardView, priority: String) {
-        val color = when(priority){
-            "H" -> Color.parseColor("#023020")
-            "M" -> Color.DKGRAY
-            else -> Color.parseColor("#008000")
+        val color = when (priority) {
+            "H" -> Color.parseColor("#004D40")
+            "M" -> Color.parseColor("#1B5E20")
+            else -> Color.parseColor("#2E7D32")
         }
         view.setCardBackgroundColor(color)
     }
-
 }
+
+
+

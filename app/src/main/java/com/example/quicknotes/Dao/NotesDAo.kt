@@ -1,5 +1,6 @@
 package com.example.quicknotes.Dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -15,7 +16,7 @@ interface NotesDAo {
     suspend fun save(note: Note)
 
     @Query("Select * from Notes")
-    suspend fun findAll():List<Note>
+     fun findAll():LiveData<List<Note>>
 
     @Delete
     suspend fun delete(note: Note)

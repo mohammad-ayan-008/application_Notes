@@ -1,5 +1,6 @@
 package com.example.quicknotes
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var  activityMainBinding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        notesListAdapter = NotesListAdapter(list)
+        notesListAdapter = NotesListAdapter(vModle,list)
         enableEdgeToEdge()
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setSupportActionBar(activityMainBinding.tb)
@@ -46,6 +47,8 @@ class MainActivity : AppCompatActivity() {
             list.addAll(it)
             notesListAdapter.notifyDataSetChanged()
         })
-  //  vModle.add(Note(note = "make a rest Api for user page", priority = "k", date = "03", month = "Jul", title = "work", stauts = true, day ="Wed" ))
+        activityMainBinding.addtask.setOnClickListener({
+            startActivity(Intent(this,MainActivity2::class.java))
+        })
     }
 }

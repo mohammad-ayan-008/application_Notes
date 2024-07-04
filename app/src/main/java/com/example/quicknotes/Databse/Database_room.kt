@@ -16,7 +16,7 @@ abstract class Database_room:RoomDatabase() {
         @Synchronized
         fun getInstance(context: Context): Database_room {
               if (database ==null){
-                 return Room.databaseBuilder(context, Database_room::class.java,"notesdatabase")
+                 return Room.databaseBuilder(context, Database_room::class.java,"notesdata")
                      .fallbackToDestructiveMigration()
                      .build()
             } else {
