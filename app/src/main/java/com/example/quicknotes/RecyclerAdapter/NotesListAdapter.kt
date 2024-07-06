@@ -1,4 +1,4 @@
-package com.example.quicknotes
+package com.example.quicknotes.RecyclerAdapter
 
 import android.app.DatePickerDialog
 import android.app.Dialog
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.widget.PopupMenu
 import androidx.cardview.widget.CardView
-import androidx.databinding.Bindable
 import androidx.recyclerview.widget.RecyclerView
+import com.example.quicknotes.R
 import com.example.quicknotes.R.id.content_edit
 import com.example.quicknotes.R.id.submit_edit
 import com.example.quicknotes.databinding.LayoutNoteBinding
@@ -49,7 +49,7 @@ class NotesListAdapter (public var vModle: VModle,public  var notes:List<Note>):
                                vModle.update(note)
                                true
                            }
-                           R.id.edit->{
+                           R.id.edit ->{
                                val note = notes[adapterPosition]
 
                                var dialogue = Dialog(layoutNoteBinding.root.context)
@@ -188,7 +188,7 @@ class NotesListAdapter (public var vModle: VModle,public  var notes:List<Note>):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val layoutInflater:LayoutInflater = LayoutInflater.from(parent.context)
-        return NotesListAdapter.Holder(vModle,notes,LayoutNoteBinding.inflate(layoutInflater,parent,false))
+        return Holder(vModle,notes,LayoutNoteBinding.inflate(layoutInflater,parent,false))
     }
 
     override fun getItemCount(): Int {
