@@ -62,11 +62,14 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="246dp"
+        app:counterMaxLength="15"
+        app:counterEnabled="true"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="15"
             android:id="@+id/title_main"
 
             android:hint="Title" />

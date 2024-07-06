@@ -76,13 +76,15 @@
                 android:layout_height="wrap_content"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="1dp"
+                app:counterMaxLength="15"
+                app:counterEnabled="true"
                 tools:layout_editor_absoluteY="246dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/title_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:maxLength="15"
                     android:hint="Title" />
             </com.google.android.material.textfield.TextInputLayout>
 
