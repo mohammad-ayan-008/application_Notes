@@ -32,7 +32,8 @@ class AddFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sigininaccount=GoogleSignIn.getLastSignedInAccount(requireContext())
-    }
+
+    4
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
