@@ -5,6 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.quicknotes.Dao.NotesDAo
 import com.example.quicknotes.Databse.Database_room
+import com.example.quicknotes.Fragments.List_data
+import com.example.quicknotes.Fragments.Login_Fragment
 import com.example.quicknotes.entities.Note
 import dagger.Module
 import dagger.Provides
@@ -19,6 +21,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class Module {
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext applicationContext: Context):Database_room{
@@ -30,5 +33,12 @@ class Module {
         return databaseRoom.notesdao()
     }
 
+    @Singleton
+    @Provides
+    fun frag_1():List_data= List_data()
+
+    @Singleton
+    @Provides
+    fun frag_2():Login_Fragment= Login_Fragment()
 
 }

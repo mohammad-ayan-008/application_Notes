@@ -51,6 +51,7 @@ class MainActivity2 : AppCompatActivity() {
                 if ((!title.isNullOrBlank() and !content.isNullOrBlank() and !priority.isNullOrBlank() and !Day.isNullOrBlank() and !Month.isNullOrBlank() and !Date.isNullOrBlank())) {
                     viewmodle.add(
                         Note(
+                            userId = "",
                             note = content,
                             priority = priority,
                             date = Date,

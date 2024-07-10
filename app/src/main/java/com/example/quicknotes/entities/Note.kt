@@ -11,6 +11,7 @@ import java.time.Month
 @Entity(tableName = "Notes")
 data class Note(
     @PrimaryKey(autoGenerate = true)   var id:Int?=null,
+    @ColumnInfo(name = "userID")       var userId:String,
     @ColumnInfo(name = "Titles")       var title:String,
     @ColumnInfo(name = "Notes")        var note:String,
     @ColumnInfo(name = "Date")         var date:String,
@@ -19,7 +20,6 @@ data class Note(
     @ColumnInfo(name = "priorities")   @Bindable var priority:String,
     @ColumnInfo(name = "status")       var stauts:Boolean,
     @ColumnInfo(name = "year")         var year:String
-
 ):BaseObservable(){
 
 }

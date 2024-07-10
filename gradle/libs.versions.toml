@@ -12,6 +12,7 @@ lifecycleViewmodelKtx = "2.8.3"
 material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
+playServicesAuth = "20.6.0"
 projectlombokLombok = "1.18.0"
 projectlombokLombokVersion = "1.18.0"
 roomRuntime = "2.6.1"
@@ -36,6 +37,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 org-projectlombok-lombok2 = { module = "org.projectlombok:lombok", version.ref = "projectlombokLombokVersion" }
 org-projectlombok-lombok = { module = "org.projectlombok:lombok", version.ref = "projectlombokLombok" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

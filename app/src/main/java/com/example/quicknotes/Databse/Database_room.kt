@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.quicknotes.Dao.NotesDAo
 import com.example.quicknotes.entities.Note
 
-@Database(version = 2, entities = [Note::class], exportSchema = false)
+@Database(version = 3, entities = [Note::class], exportSchema = false)
 abstract class Database_room:RoomDatabase() {
     companion object{
         @Volatile
