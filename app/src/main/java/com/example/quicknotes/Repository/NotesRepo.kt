@@ -23,8 +23,11 @@ class NotesRepo @Inject constructor(private val notesDAO: NotesDAo) {
         notesDAO.delete(note)
     }
 
-    suspend fun findByPriority(priority: String): MutableLiveData<List<Note>> {
+     fun findByPriority(priority: String): MutableLiveData<List<Note>> {
         return MutableLiveData<List<Note>>(notesDAO.findByPriority(priority))
+    }
+     fun findBuUserId(uid:String):LiveData<List<Note>>{
+        return notesDAO.findByID(uid)
     }
 
     suspend fun update(note: Note) {

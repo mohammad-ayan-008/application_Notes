@@ -15,11 +15,6 @@
         android:theme="@style/Theme.QuickNotes"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
-            android:exported="true" >
-
-        </activity>
-        <activity
 
             android:name=".MainActivity"
             android:exported="true">

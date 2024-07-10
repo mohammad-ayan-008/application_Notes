@@ -64,12 +64,17 @@ class Login_Fragment : Fragment() {
 
     private fun signIn() {
         val signInIntent: Intent = googleSignInClient.getSignInIntent()
-        startActivityForResult(signInIntent,100)
-    //result.launch(signInIntent)
+        //startActivityForResult(signInIntent,100)
+         result.launch(signInIntent)
     }
 
     private var result = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
+        if (task != null){
+            parentFragmentManager.beginTransaction().
+            replace(R.id.frames,List_data())
+                .commit()
+        }
         handleSignInResult(task)
     }
 
@@ -77,9 +82,7 @@ class Login_Fragment : Fragment() {
         try {
             val account = completedTask.getResult(ApiException::class.java)
             Toast.makeText(requireContext(),"Logined as"+account.displayName,Toast.LENGTH_SHORT).show()
-            parentFragmentManager.beginTransaction().
-            replace(R.id.frames,List_data())
-                .commit()
+
         } catch (e: ApiException) {
             Log.e("ERROR",e.toString())
 

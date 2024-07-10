@@ -22,8 +22,10 @@ interface NotesDAo {
     suspend fun delete(note: Note)
 
     @Query("Select * from Notes where priorities = :priority")
-    suspend fun findByPriority(priority:String):List<Note>
+     fun findByPriority(priority:String):List<Note>
 
     @Update
     suspend fun update(note: Note)
+    @Query("select * from Notes where userID = :uid")
+     fun findByID(uid:String):LiveData<List<Note>>
 }

@@ -44,7 +44,7 @@ class List_data : Fragment() {
         recycler.layoutManager = LinearLayoutManager(requireContext())
         recycler.adapter = notesListAdapter
 
-        vmodle.allnotes.observe(viewLifecycleOwner) {
+        vmodle.getALl().observe(viewLifecycleOwner) {
             if (!list.isEmpty()) {
                 list.clear()
             }
