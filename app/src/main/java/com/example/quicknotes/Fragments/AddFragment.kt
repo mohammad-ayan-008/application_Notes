@@ -15,25 +15,30 @@ import com.example.quicknotes.entities.Note
 import com.example.quicknotes.viewmodles.VModle
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class AddFragment : Fragment() {
 
     private lateinit var  Day:String
     private lateinit var  Date:String
     private  lateinit var Month:String
     private  lateinit var Year:String
-    private lateinit var viewmodle:VModle
+
+    public lateinit var viewmodle:VModle
     private lateinit var priority:String
     private var sigininaccount:GoogleSignInAccount?=null
     private lateinit var fragmentAddBinding: FragmentAddBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sigininaccount=GoogleSignIn.getLastSignedInAccount(requireContext())
+        sigininaccount = GoogleSignIn.getLastSignedInAccount(requireContext())
 
-    4
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
